@@ -9,9 +9,7 @@
 		<div class='title'>Upcoming events</div>
 		<div class='events'>
 			{% for post in site.posts %}
-				{% capture date_now %}{{ 'now' | date: '%m %d %Y' }}{% endcapture %}
-				{% capture date_evt %}{{ post.event_date | date: '%m %d %Y' }}{% endcapture %}
-				{% if date_now < date_evt %}
+				{% if post.event_past == false %}
 					<div class='event_title'><a target='_blank' href='{{ post.eventbrite }}'>{{ post.title }}</a></div>
 				{% endif %}
 			{% endfor %}
@@ -21,9 +19,7 @@
 		<div class='title'>Past events</div>
 		<div class='events'>
 			{% for post in site.posts %}
-				{% capture date_now %}{{ 'now' | date: '%m %d %Y' }}{% endcapture %}
-				{% capture date_evt %}{{ post.event_date | date: '%m %d %Y' }}{% endcapture %}
-				{% if date_now > date_evt %}
+				{% if post.event_past == true %}
 					<div class='event_title'><a target='_blank' href='{{ post.eventbrite }}'>{{ post.title }}</a></div>
 				{% endif %}
 			{% endfor %}
