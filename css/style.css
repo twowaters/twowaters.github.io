@@ -16,6 +16,15 @@ body {
 	margin:0;
 }
 
+#site_title {
+	z-index:2000;
+	position:fixed;
+	font-size:60px;
+	font-weight:100;
+	top:20vh;
+	left:5vh;
+}
+
 .panel {
 	background-image:url(../images/assets/splash.jpg);
 	background-repeat:no-repeat;
@@ -31,20 +40,13 @@ body {
 	background-position:calc(100% + ((90vh * 0.8)/2)) calc(5vh); /* image is 4x5, hence the 0.8 */
 }
 .panel#panel_right {
+	z-index:1000;
 	float:left;
 	position:relative;
 	background-position:calc(((90vh * 0.8)/2) * -1) calc(5vh);
 	height:105vh;
 	margin-left:50%;
 	margin-left:calc(100vw / 2);
-}
-
-#site_title {
-	position:fixed;
-	font-size:60px;
-	font-weight:100;
-	top:20vh;
-	left:5vh;
 }
 
 .event_reel:first-child {
