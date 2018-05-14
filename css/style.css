@@ -25,6 +25,24 @@ body {
 	left:5vh;
 }
 
+#social {
+	z-index:2000;
+	position:fixed;
+	bottom:5vh;
+	left:5vh;
+}
+#social .element {
+	background:transparent;
+	width:20px;
+	height:20px;
+}
+#social .element#instagram {
+	background-image:url(../images/icons/instagram.png);
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+	background-position:0 0;
+}
+
 .panel {
 	background-image:url(../images/assets/splash.jpg);
 	background-repeat:no-repeat;
