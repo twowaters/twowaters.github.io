@@ -5,24 +5,101 @@ sitemap:
 
 @import url('https://fonts.googleapis.com/css?family=Roboto:100,300,500');
 
+$color_black:		#111;
+$color_accent:	#71382d;
+
+@mixin font_label {
+	font-size:12px;
+	text-transform:uppercase;
+	letter-spacing:1px;
+}
+@mixin font_event_title {
+	font-size:24px;
+	font-weight:500;
+	padding:10px 0;
+	text-decoration:none;
+}
+
 html,
 body {
-	background:#ffcdd2;
-	color:#111;
+	background:#c68d7f;
+	color:$color_black;
 	font-family:'Roboto', sans-serif;
 	font-weight:300;
 	width:100%;
 	height:100%;
 	margin:0;
+	padding:0;
+}
+
+a,
+a:hover {
+	text-decoration:none;
+}
+a {
+	color:$color_black !important;
+}
+a:hover {
+	color:$color_black !important;
+}
+
+p a,
+p a:hover {
+	font-weight:500;
+	text-decoration:none;
+	border-bottom:2px solid #111;
+}
+
+.wrapper {
+	margin-left:0;
+}
+
+article.post {
+	padding-top:20vh;	
+}
+article.post .post_title {
+	@include font_event_title;
 }
 
 #site_title {
 	z-index:2000;
+	display:block;
+	visibility:visible;
 	position:fixed;
 	font-size:60px;
 	font-weight:100;
 	top:20vh;
 	left:5vh;
+}
+#site_title.hide {
+	display:none;
+	visibility:hidden;
+}
+
+#navigation {
+	z-index:2000;
+	position:fixed;
+	height:5vh;
+	left:5vh;
+	top:5vh;
+}
+#navigation a .btn {
+	@include font_label;
+	font-weight:500;
+	display:block;
+	width:auto;
+	height:20px;
+}
+#navigation a {
+	display:inline-block;
+	border:none;
+	cursor:pointer;
+}
+#navigation a:hover {
+	color:$color_accent !important;
+}
+#navigation a .btn#about {
+	margin-left:2.5vh;
 }
 
 #social {
@@ -77,19 +154,14 @@ body {
 	padding:5vh 5vh 0 0;
 }
 .event_reel .title {
-	font-size:12px;
-	text-transform:uppercase;
-	letter-spacing:1px;
+	@include font_label;
 }
-.event_reel .event_title {
-	font-size:24px;
-	font-weight:500;
-	padding:10px 0;
-}
+.event_reel .event_title,
 .event_reel .event_title a {
-	color:#111;
-	text-decoration:none;
+	@include font_event_title;
+	border-bottom:none;
 }
-.event_reel .event_title:hover a {
+.event_reel .event_title a:hover {
 	text-decoration:underline;
 }
+

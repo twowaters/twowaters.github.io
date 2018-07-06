@@ -13,4 +13,6 @@
 	<link rel='stylesheet' type='text/css' href='/css/style.css' />
 </head>
 <body>
-		
+	<div id='site_title' class='{% if page.layout != "home" %}hide{% endif %}'>{{ site.title }}</div>
+	{% include social.html %}
+	{% include navigation.html %}
