@@ -8,6 +8,10 @@ sitemap:
 $color_black:		#111;
 $color_accent:	#71382d;
 
+@mixin font_display {
+	font-size:42px;
+	font-weight:500;
+}
 @mixin font_label {
 	font-size:12px;
 	text-transform:uppercase;
@@ -24,8 +28,7 @@ html,
 body {
 	background:#c68d7f;
 	color:$color_black;
-	font-family:'Roboto', sans-serif;
-	font-weight:300;
+	font:300 16px 'Roboto', sans-serif !important;
 	width:100%;
 	height:100%;
 	margin:0;
@@ -43,6 +46,10 @@ a:hover {
 	color:$color_black !important;
 }
 
+p {
+	line-height:1.5em;
+}
+
 p a,
 p a:hover {
 	font-weight:500;
@@ -57,8 +64,8 @@ p a:hover {
 article.post {
 	padding-top:20vh;	
 }
-article.post .post_title {
-	@include font_event_title;
+article.post h1.post-title {
+	@include font_display;
 }
 
 #site_title {
