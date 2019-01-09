@@ -4,7 +4,7 @@
 	<div class='event_reel' id='events_upcoming'>
 		<div class='title'>Upcoming events</div>
 		<div class='events'>
-			{% for post in site.posts %}
+			{% for post in site.posts reversed %}
 				{% if post.event_past == false %}
 					<div class='event_title'><a target='_blank' href='{{ post.eventbrite }}'>{{ post.title }}</a></div>
 				{% endif %}
